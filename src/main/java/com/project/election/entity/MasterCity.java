@@ -24,6 +24,17 @@ public class MasterCity {
 
 	@OneToMany(mappedBy = "masterCity")
 	private List<User> userList;
+	
+	public List<Candidate> getCandidateList() {
+		return candidateList;
+	}
+
+	public void setCandidateList(List<Candidate> candidateList) {
+		this.candidateList = candidateList;
+	}
+
+	@OneToMany(mappedBy="city")
+	private List<Candidate> candidateList;
 
 	public MasterCity() {
 

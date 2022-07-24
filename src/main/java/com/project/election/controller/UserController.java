@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.project.election.domain.LoginStatus;
 import com.project.election.domain.UserDomain;
 import com.project.election.entity.MasterCity;
 import com.project.election.entity.User;

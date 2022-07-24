@@ -7,9 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories("com.project.election.repository")
-@ComponentScan("com.project.election")
-@EntityScan("com.project.election.entity")
 public class ElectionApplication {
 
 	public static void main(String[] args) {
