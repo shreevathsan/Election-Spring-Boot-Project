@@ -15,6 +15,7 @@ import com.project.election.domain.LoginStatus;
 import com.project.election.domain.UserDomain;
 import com.project.election.entity.MasterCity;
 import com.project.election.entity.User;
+import com.project.election.exceptionhandler.NotFoundException;
 import com.project.election.service.MasterCityService;
 import com.project.election.service.UserService;
 
@@ -69,7 +70,7 @@ public class UserController {
 			user1.setMasterCity(null);
 			return user1;
 		} catch (Exception e) {
-			throw e;
+			throw new NotFoundException("USER NOT FOUND");
 		}
 
 	}
