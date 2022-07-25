@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.election.domain.CandidateDomain;
 import com.project.election.entity.Candidate;
+import com.project.election.entity.ElectionType;
 import com.project.election.entity.MasterCity;
 import com.project.election.service.CandidateService;
+import com.project.election.service.ElectionTypeService;
 import com.project.election.service.MasterCityService;
 
 @RestController
@@ -28,24 +30,34 @@ public class CandidateController {
 	@Autowired
 	private MasterCityService masterCityService;
 
+	@Autowired
+	private ElectionTypeService electionTypeService;
+
 	@PostMapping("/createCandidate")
 	public ResponseEntity<Candidate> createCandidate(@RequestBody CandidateDomain candidateDomain) {
 		logger.info("got the request from the ECO to create candidate for name" + candidateDomain.getName());
 		ResponseEntity<Candidate> entityResponse = null;
 		try {
-			logger.info("about to call the masterService class to call get the city by" + candidateDomain.getCity());
-			MasterCity city = masterCityService.getCityById(candidateDomain.getCity());
-			city.setCandidateList(null);
-			city.setUserList(null);
+			logger.info("about to call the masterService class to call get the city by"
+					+ candidateDomain.getElectionType());
 			Candidate candidate = new Candidate();
 			candidate.setAddress(candidateDomain.getAddress());
 			candidate.setAge(candidateDomain.getAge());
 			candidate.setDob(candidateDomain.getDob());
-			candidate.setElectionType(candidate.getElectionType());
+			System.out.println(candidate.getElectionType());
 			candidate.setMobileNumber(candidateDomain.getMobileNumber());
 			candidate.setName(candidateDomain.getName());
-			candidate.setPartyName(candidate.getPartyName());
+			candidate.setPartyName(candidateDomain.getPartyName());
+
+			MasterCity city = masterCityService.getCityById(candidateDomain.getCity());
 			candidate.setCity(city);
+
+			logger.info("about to call the electionTypeService to get the election type by passing"
+					+ candidateDomain.getElectionType());
+			ElectionType electionType = new ElectionType();
+			electionType = electionTypeService.getElectionType(candidateDomain.getElectionType());
+			candidate.setElectionType(electionType);
+
 			Candidate response = candidateService.createCandidate(candidate);
 			entityResponse = new ResponseEntity(response, HttpStatus.OK);
 

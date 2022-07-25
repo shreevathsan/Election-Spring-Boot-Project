@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "master_city")
 public class MasterCity {
@@ -22,9 +24,14 @@ public class MasterCity {
 	@Column(name = "city")
 	private String city;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "masterCity")
 	private List<User> userList;
-	
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "city")
+	private List<Candidate> candidateList;
+
 	public List<Candidate> getCandidateList() {
 		return candidateList;
 	}
@@ -32,9 +39,6 @@ public class MasterCity {
 	public void setCandidateList(List<Candidate> candidateList) {
 		this.candidateList = candidateList;
 	}
-
-	@OneToMany(mappedBy="city")
-	private List<Candidate> candidateList;
 
 	public MasterCity() {
 

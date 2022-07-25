@@ -11,7 +11,7 @@ public class CandidateDomain {
 	private String mobileNumber;
 	private String partyName;
 	private String address;
-	private String electionType;
+	private int electionType;
 
 	public String getName() {
 		return name;
@@ -69,12 +69,13 @@ public class CandidateDomain {
 		this.address = address;
 	}
 
-	public String getElectioType() {
+	
+	public int getElectionType() {
 		return electionType;
 	}
 
-	public void setElectioType(String electioType) {
-		this.electionType = electioType;
+	public void setElectionType(int electionType) {
+		this.electionType = electionType;
 	}
 
 	@Override

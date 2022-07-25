@@ -39,8 +39,9 @@ public class Candidate {
 	@Column(name = "party_name")
 	private String partyName;
 
-	@Column(name = "election_type")
-	private String electionType;
+	@ManyToOne
+	@JoinColumn(name ="election_type")
+	private ElectionType electionType;
 
 	@Column(name = "address")
 	private String address;
@@ -105,11 +106,11 @@ public class Candidate {
 		this.city = city;
 	}
 
-	public String getElectionType() {
+	public ElectionType getElectionType() {
 		return electionType;
 	}
 
-	public void setElectionType(String electionType) {
+	public void setElectionType(ElectionType electionType) {
 		this.electionType = electionType;
 	}
 
