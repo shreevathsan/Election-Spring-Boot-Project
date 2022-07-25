@@ -28,6 +28,10 @@ public class ElectionType {
 	@OneToMany(mappedBy = "electionType")
 	private List<Candidate> candidateList;
 
+	@JsonIgnore
+	@OneToMany(mappedBy = "electionType")
+	private List<ElectionCreation> creations;
+
 	public ElectionType() {
 		super();
 	}
@@ -54,6 +58,14 @@ public class ElectionType {
 
 	public void setCandidateList(List<Candidate> candidateList) {
 		this.candidateList = candidateList;
+	}
+
+	public List<ElectionCreation> getCreations() {
+		return creations;
+	}
+
+	public void setCreations(List<ElectionCreation> creations) {
+		this.creations = creations;
 	}
 
 }

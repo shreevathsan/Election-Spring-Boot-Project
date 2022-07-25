@@ -32,6 +32,10 @@ public class MasterCity {
 	@OneToMany(mappedBy = "city")
 	private List<Candidate> candidateList;
 
+	@JsonIgnore
+	@OneToMany(mappedBy = "city")
+	private List<ElectionCreation> creations;
+
 	public List<Candidate> getCandidateList() {
 		return candidateList;
 	}
@@ -66,6 +70,16 @@ public class MasterCity {
 
 	public void setUserList(List<User> userList) {
 		this.userList = userList;
+	}
+	
+	
+
+	public List<ElectionCreation> getCreations() {
+		return creations;
+	}
+
+	public void setCreations(List<ElectionCreation> creations) {
+		this.creations = creations;
 	}
 
 	@Override
