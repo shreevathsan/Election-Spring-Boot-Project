@@ -1,13 +1,17 @@
 package com.project.election.entity;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -36,6 +40,10 @@ public class ElectionCreation {
 
 	@Column(name = "end_time")
 	private String endTime;
+
+	@ManyToMany(cascade = CascadeType.REMOVE)
+	@JoinTable(name = "candidate_election", joinColumns = @JoinColumn(name = "election_id"), inverseJoinColumns = @JoinColumn(name = "candidate_id"))
+	private List<Candidate> candidateList;
 
 	public ElectionCreation() {
 		super();

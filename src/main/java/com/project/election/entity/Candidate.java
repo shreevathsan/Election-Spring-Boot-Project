@@ -1,13 +1,17 @@
 package com.project.election.entity;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -40,11 +44,15 @@ public class Candidate {
 	private String partyName;
 
 	@ManyToOne
-	@JoinColumn(name ="election_type")
+	@JoinColumn(name = "election_type")
 	private ElectionType electionType;
 
 	@Column(name = "address")
 	private String address;
+
+	@ManyToMany(cascade = CascadeType.REMOVE)
+	@JoinTable(name = "candidate_election", joinColumns = @JoinColumn(name = "candidate_id"), inverseJoinColumns = @JoinColumn(name = "election_id"))
+	private List<ElectionCreation> electionCreationList;
 
 	public Candidate() {
 

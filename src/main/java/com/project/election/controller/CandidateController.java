@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.election.domain.CandidateDomain;
@@ -67,6 +68,14 @@ public class CandidateController {
 		}
 		return entityResponse;
 
+	}
+
+	@PostMapping("/assignCandidateForElection")
+	public String assignCandidateForElection(@RequestParam(name="candidateId") int candidateId,@RequestParam(name="electionId") int electionId) {
+		logger.info("got the requet from the mco officer to assign the candidate for the election"+ candidateId);
+		
+		
+		
 	}
 
 }

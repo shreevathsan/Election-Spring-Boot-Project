@@ -26,3 +26,34 @@
 2022-07-26 20:37:06.339  INFO 11392 --- [http-nio-8085-exec-2] com.project.election.entity.MasterCity   : got the request from the controller class to get the city by passing 1
 2022-07-26 20:37:06.454  INFO 11392 --- [http-nio-8085-exec-2] c.p.e.controller.ElectionController      : about to call the ElectionCreation Service to get the ElectionCreation object1
 2022-07-26 20:37:06.460  INFO 11392 --- [http-nio-8085-exec-2] c.p.e.service.ElectionTypeService        : about to get the electiontype by passing eletionId
+2022-07-26 20:37:06.472  INFO 11392 --- [http-nio-8085-exec-2] c.p.e.controller.ElectionController      : about to call the creation service to create the election
+2022-07-26 20:37:06.473  INFO 11392 --- [http-nio-8085-exec-2] c.p.e.service.ElectionTypeService        : about to create the election for9 AM
+2022-07-26 20:43:17.604  INFO 14488 --- [main] c.project.election.ElectionApplication   : Starting ElectionApplication using Java 1.8.0_202 on LAPTOP-RD2ICG36 with PID 14488 (C:\Election\election\target\classes started by User in C:\Election\election)
+2022-07-26 20:43:17.611  INFO 14488 --- [main] c.project.election.ElectionApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-07-26 20:43:18.430  INFO 14488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-26 20:43:18.552  INFO 14488 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 5 JPA repository interfaces.
+2022-07-26 20:43:19.541  INFO 14488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2022-07-26 20:43:19.569  INFO 14488 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-26 20:43:19.570  INFO 14488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-07-26 20:43:20.111  INFO 14488 --- [main] o.a.c.c.C.[.[localhost].[/election]      : Initializing Spring embedded WebApplicationContext
+2022-07-26 20:43:20.111  INFO 14488 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2410 ms
+2022-07-26 20:43:20.283  INFO 14488 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-26 20:43:21.003  INFO 14488 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-26 20:43:21.046  INFO 14488 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-26 20:43:21.093  INFO 14488 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-07-26 20:43:21.285  INFO 14488 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-26 20:43:21.397  INFO 14488 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-07-26 20:43:22.007  INFO 14488 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-26 20:43:22.015  INFO 14488 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-26 20:43:22.584  WARN 14488 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-26 20:43:23.127  INFO 14488 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path '/election'
+2022-07-26 20:43:23.139  INFO 14488 --- [main] c.project.election.ElectionApplication   : Started ElectionApplication in 6.126 seconds (JVM running for 6.836)
+2022-07-26 20:43:30.549  INFO 14488 --- [http-nio-8085-exec-2] o.a.c.c.C.[.[localhost].[/election]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-26 20:43:30.550  INFO 14488 --- [http-nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-26 20:43:30.552  INFO 14488 --- [http-nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-07-26 20:43:30.704  INFO 14488 --- [http-nio-8085-exec-2] c.p.election.controller.UserController   : got the request from the client to validate his login credentials123457
+2022-07-26 20:43:30.725  INFO 14488 --- [http-nio-8085-exec-2] c.project.election.service.UserService   : about to call the repository class to fetch whether the login creds are correct or not
+2022-07-26 20:43:30.878  INFO 14488 --- [http-nio-8085-exec-2] c.project.election.service.UserService   : ::::::::::::null
+2022-07-26 20:43:42.212  INFO 14488 --- [http-nio-8085-exec-4] c.p.election.controller.UserController   : got the request from the client to validate his login credentials12345
+2022-07-26 20:43:42.213  INFO 14488 --- [http-nio-8085-exec-4] c.project.election.service.UserService   : about to call the repository class to fetch whether the login creds are correct or not
+2022-07-26 20:43:42.250  INFO 14488 --- [http-nio-8085-exec-4] c.project.election.service.UserService   : ::::::::::::User [id=1, voterId=12345, firstName=Shreevathsan, lastName=Ravindran, dob=2001-04-25 00:00:00.0, aadhaarNumber=3456 432 678, gender=Male, address=SKDS Mani Nagar, mobileNumber=8072205910, password=Shreeravi@123]
